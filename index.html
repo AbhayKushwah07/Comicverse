@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Comicverse</title>
+  <link rel="stylesheet" href="asset/css/index.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css' rel='stylesheet'
+    integrity='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN' crossorigin='anonymous'>
+</head>
+<style>
+ 
+
+</style>
+
+<body>
+  
+
+  <!-- //offcanvas -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title m-auto" id="offcanvasRightLabel">My Cart</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body ">
+      
+      
+<div id="cart-items">
+
+</div>      
+<div class="row position-absolute bottom-0 shadow-lg py-2 px-2 w-100 bg-white" style="margin-left: -16px; height: 60px;">
+<div class="row mb-3">
+  <div class="col-6">Total Price: ₹<span id="total-price">0</span></div>
+  <div class="col-3"></div>
+  <div class="col-3"><button type="button" class="btn btn-outline-danger btn-sm px-3">Buy</button></div>
+</div>
+</div>
+    </div>
+  </div>
+  <!-- //offcanvas -->
+
+
+
+  <section id="navbar">
+    
+    <div class="container-fluid p-0 ">
+      <nav class="navbar navbar-expand-lg bg-white shadow ">
+        <div class="container-fluid">
+          <a class="navbar-brand"  href="#"><img src="asset/img/comicverse.png" height="50" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+              <li class="nav-item px-2">
+                <a class="nav-link active fw-bolder" data-aos="fade-right" aria-current="page" href="#"><img
+                    src="asset/img/marvel.jpg" height="40" alt=""></a>
+              </li>
+              <li class="nav-item px-2">
+                <a class="nav-link active fw-bolder" data-aos="fade-up" aria-current="page" href="#"><img
+                    src="asset/img/dc.jpg" height="40" alt=""></a>
+              </li>
+              <li class="nav-item px-2">
+                <a class="nav-link active fw-bolder" data-aos="fade-left" aria-current="page" href="#"><img
+                    src="asset/img/manga.jpg" height="35" alt=""></a>
+              </li>
+
+            </ul>
+            <form class="d-flex me-2">
+
+              <button class="btn btn-outline-dark rounded-0 cart-button position-relative" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">MyCart <i class="fa fa-shopping-cart"
+                  aria-hidden="true"></i>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="item-count">
+                    0
+                    <span class="visually-hidden">unread messages</span>
+                  </span></button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <section id="main" class="mt-2">
+    
+    <div class="container-fluid">
+      <div class="row" style="min-height: 90vh">
+        <div class="col-1 bg-white" >
+
+        </div>
+        <div class="col-10">
+          <div class="row px-5 py-1 ">
+            <div class="col-3 p-0 shadow-lg shadow">
+              <select class="form-select rounded-0 shadow-none border-1" style="border-color: pink;" aria-label="Default select example">
+                <option selected>Type</option>
+                <option value="1">Manga</option>
+                <option value="2">Dc Comics</option>
+                <option value="3">Marvel</option>
+                <option value="4">Cartoon</option>
+              </select>
+            </div>
+            <div class="col-9 p-0 shadow-lg shadow">
+              <form class="d-flex" role="search" id="search">
+                <input class="form-control  rounded-0 shadow-none border-1" style="border-color: pink;" id="searchbar" type="search"
+                  placeholder="Search" aria-label="Search">
+            
+            </div>
+          </div>
+
+          <div class="container-fluid my-2 p-0 " id="slider">
+            <div class="owl-carousel owl-theme " id="owl">
+
+
+
+            </div>
+          </div>
+          <div class="container-fluid p-0 mt-2 d-flex justify-content-evenly flex-wrap" id="cardscontainer">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+        <div class="col-1 bg-white" >
+     
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-muted mt-5" id="footer" style="background-color: rgb(255, 242, 244);">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom ">
+
+
+
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fa fa-diamond" aria-hidden="true"></i> Comic Verse
+            </h6>
+            <p style="text-align: justify;">
+              "Comic Verse: Where Humor Meets Poetry! Dive into a world of witty rhymes and hilarious illustrations.
+              Laugh out loud with our collection of quirky comics and clever verses. Join us for a fun-filled journey
+              through the lighter side of literature!"
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Products
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Manga</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Dc Comics</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Marvel</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Cartoons</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Pricing</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Settings</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Orders</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase text-center fw-bold mb-4 ">
+              Location
+            </h6>
+            <div class="shadow shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.740784777813!2d78.16132147487079!3d26.20510929014218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3976c698c3aa4bff%3A0x996635fa1543a635!2sCollege%202%20Corporate%20Program!5e0!3m2!1sen!2sin!4v1708297899132!5m2!1sen!2sin"
+                width="400" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2024 Copyright:
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">ComicVerse.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="asset/javascript/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+
+
+
+    var owl = $('#owl');
+    owl.owlCarousel({
+      loop: true,
+      margin: 10,
+      dots: false,
+      nav: true,
+      autoplay: true,
+      autoplaySpeed: 1000,
+      autoplayTimeout: 2000,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 5  
+        }
+      }
+    });
+
+  </script>
+
+  <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js'
+    integrity='sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL'
+    crossorigin='anonymous'></script>
+
+</body>
+
+</html>
